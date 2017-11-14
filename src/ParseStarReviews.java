@@ -5,13 +5,13 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-public class ParseStarReviews extends ParseReviews{
+public class ParseStarReviews{
     Document doc;
     Elements items;
     String result, url;
 
     public ParseStarReviews(String url)throws IOException {
-        super(url);
+        this.url = url;
         this.doc = Jsoup.connect(url).get();
         this.items = this.doc.getElementsByAttributeValue("class", "sprite g-rating-stars");
     }
